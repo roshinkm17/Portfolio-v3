@@ -1,38 +1,72 @@
+@import url(
+  https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic
+);
+@import url(
+  https://fonts.googleapis.com/css?family=Sora:100,200,300,regular,500,600,700,800
+);
+:root {
+  font-size: clamp(1rem,10vw, 1vw);
+}
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  width: 100%;
+  background-size: cover;
+  background-position: center;
   color: white;
+  background-repeat: no-repeat;
+  transition: .2s ease;
+}
+.ff-poppins {
+  font-family: 'Poppins', sans-serif;
+}
+.ff-sora {
+  font-family: 'Sora', sans-serif;
+}
+.App {
+  min-height: 100vh;
 }
 
-.App-link {
-  color: #61dafb;
+
+.glass {
+  background: rgba(255, 255, 255, 0.12);
+  overflow: hidden;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.9px);
+  -webkit-backdrop-filter: blur(6.9px);
+  border: 1px solid rgba(255, 255, 255, 0.17);
+}
+.btn {
+  background-color: #e05d5d;
+  position: relative;
+}
+.btn::after {
+  transition: .2s ease;
+  content: '';
+  z-index: -1;
+  position: absolute;
+  top: 3px;
+  border-radius: 5px;
+  left: 0;
+  background-color: #ad1717;
+  height: 100%;
+  width: 100%;
+}
+.profile-link {
+  transition: .2s ease;
+}
+.github {
+  transition: .2s ease;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (hover:hover) {
+  .btn:hover::after {
+    top: -3px;
   }
-  to {
-    transform: rotate(360deg);
+  .profile-link:hover {
+    transform: scale(1.2);
+    color: white;
   }
+  .github:hover {
+transform: scale(1.2);
+  }
+
 }
